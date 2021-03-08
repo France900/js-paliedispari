@@ -19,57 +19,59 @@ console.log("inputp", parola);
 
 function reverseString(valore) {
   var pippo = valore.split("").reverse().join("")
-  console.log("pippo", pippo);
+  console.log("parola all'inverso", pippo);
+  return pippo;
   // document.getElementById("demo").innerHTML = paroal;
 }
 reverseString(parola)
+var girata = reverseString(parola)
 // verifico l'uguaglianza
-// var doc = document.getElementById("result");
-// if (parola === ) {
-//   doc.innerHTML = "Bravo, sei riuscito a scrivere una parola palindroma!"
-// } else {
-//   doc.innerHTML = "mi spiace, la parola inserita non è palindroma"
-// }
-// console.log(ciao);
+var doc = document.getElementById("result");
+if (parola === girata) {
+  console.log("Bravo, sei riuscito a scrivere una parola palindroma!");
+  doc.innerHTML = "Bravo, sei riuscito a scrivere una parola palindroma!"
+} else {
+  console.log("mi spiace, la parola inserita non è palindroma");
+  doc.innerHTML = "mi spiace, la parola inserita non è palindroma"
+}
 
 
 
-// // PARI E DISPARI
-// // var punisher = true
-// // do {
-// // } while (true);
-// // utente sceglie se pari o dispari
-// var doc = document.getElementById("result");
-// var pariDispari = prompt("scegli pari o dispari");
-// console.log("hai scelto ", pariDispari);
-// // utente sceglie i numeri
-// var humanNumber = prompt("adesso scegli un numero fra 1 e 5");
-// console.log("hai scelto ", humanNumber);
-// // computer genera numeri
+// PARI E DISPARI
+// var punisher = true
+// do {
+// } while (true);
+// utente sceglie se pari o dispari
+var doc = document.getElementById("result");
+var pariDispari = prompt("scegli pari o dispari");
+console.log("hai scelto ", pariDispari);
+// utente sceglie i numeri
+var humanNumber = parseInt(prompt("adesso scegli un numero fra 1 e 5"));
+console.log("hai scelto ", humanNumber);
+// computer genera numeri
 function dice(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 var cpuNumbers = dice(1,5)
-console.log(cpuNumbers);
+console.log("il computer ha scelto ", cpuNumbers);
 dice(2,7)
-// // somma numeri
-// var result = humanNumber + cpuNumbers
-// console.log(result);
-// // dichiarazione del vincitore
-// if (!(result%2)) {
-//   if (pariDispari == "pari") {
-//     console.log("è pari, hai vinto la partita!");
-//     var punisher = false
-//   } else {
-//     console.log("è disari, hai perso la partita!");
-//     var punisher = false
-//   }
-// } else {
-//   if (pariDispari == "dispari") {
-//     console.log("è dispari, hai vinto la partita!");
-//     var punisher = false
-//   } else {
-//     console.log("è pari, hai perso la partita!");
-//     var punisher = false
-//   }
-// }
+// somma numeri
+var result = humanNumber + cpuNumbers
+console.log("la somma dei numeri è ", result);
+// dichiarazione del vincitore
+// se dichiarato pari
+if (result%2 == 0) {
+  if (pariDispari == "pari") {
+    console.log("complimenti hai vinto la partita");
+  } else {
+    console.log("mi dispiace, hai perso!");
+  }
+}
+//se dichiarato dispari
+if (result%2 !== 0) {
+  if (pariDispari == "dispari") {
+    console.log("complimenti hai vinto la partita");
+  } else {
+    console.log("mi dispiace, hai perso!");
+  }
+}
